@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <script src="scripts/libs/jszip.min.js"></script>
+    <script src="scripts/downloader.js"></script>
+    <script src="scripts/parser.js"></script>
+    <script src="scripts/utils.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>  
+<div>
+    <label>
+        Search:
+        <input id="search" type="text" disabled>
+    </label>
+    <label>
+        Mappings:
+        <select id="from">
+            <option value="intermediary">Intermediary</option>
+            <option value="yarn">Yarn</option>
+            <option value="mojmap">Mojmap</option>
+        </select>
+        to
+        <select id="to">
+            <option value="yarn">Yarn</option>
+            <option value="mojmap">Mojmap</option>
+        </select>
+    </label>
+</div>
+<div id="results"></div>
+</body>
+<script src="scripts/pages/search.js"></script>
+</html>

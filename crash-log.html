@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crash Log</title>
+    <script src="scripts/libs/jszip.min.js"></script>
+    <script src="scripts/downloader.js"></script>
+    <script src="scripts/parser.js"></script>
+    <script src="scripts/utils.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>  
+<div>
+    <label>
+        Mappings:
+        <select id="to">
+            <option value="yarn">Yarn</option>
+            <option value="mojmap">Mojmap</option>
+        </select>
+    </label>
+    <button id="map">Map</button>
+</div>
+<textarea id="log" disabled></textarea>
+</body>
+<script src="scripts/pages/crash-log.js"></script>
+</html>
