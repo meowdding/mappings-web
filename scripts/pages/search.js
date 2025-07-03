@@ -8,14 +8,14 @@ const createElement = (from, to) => {
     const methods = document.createElement("ul");
     for (let [name, method] of Object.entries(from.methods)) {
         const methodElement = document.createElement("li");
-        methodElement.innerHTML = `<strong>${method}</strong> → <span>${to ? to.methods[name] : "N/A"}</span>`;
+        methodElement.innerHTML = `<strong>${method}</strong> → <span>${to ? to.methods[name] || name : "N/A"}</span>`;
         methods.appendChild(methodElement);
     }
 
     const fields = document.createElement("ul");
     for (let [name, field] of Object.entries(from.fields)) {
         const fieldElement = document.createElement("li");
-        fieldElement.innerHTML = `<strong>${field}</strong> → <span>${to ? to.fields[name] : "N/A"}</span>`;
+        fieldElement.innerHTML = `<strong>${field}</strong> → <span>${to ? to.fields[name] || name : "N/A"}</span>`;
         fields.appendChild(fieldElement);
     }
 
@@ -40,7 +40,7 @@ const search = (mappings, source, destination, query) => {
     const results = Object.entries(source)
         .filter(([_, data]) => data.actual.toLowerCase().includes(query))
         .map(([name, _]) => name)
-        .splice(0, 10);
+        .splice(0, 50);
 
     resultsElement.innerHTML = "";
 

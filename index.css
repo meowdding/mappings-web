@@ -64,6 +64,11 @@ body {
 
 textarea {
     height: 100%;
+
+    background-color: var(--button-color);
+    color: var(--text-title-color);
+    border: transparent;
+    padding: 0.25rem;
 }
 
 .index {
