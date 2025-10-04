@@ -38,7 +38,17 @@ const version = new URLSearchParams(window.location.search).get("version") || "1
 const search = (mappings, source, destination, query) => {
     const resultsElement = document.getElementById("results");
     const results = Object.entries(source)
-        .filter(([_, data]) => data.actual.toLowerCase().includes(query))
+        .filter(([_, data]) => {
+            if (data.actual.toLowerCase().includes(query)) {
+                return true;
+            }
+
+            if (Object.entries(data.methods).some((method) => method[1].includes(query))) {
+                return true;
+            }
+            
+            return Object.entries(data.fields).some((field) => field[1].includes(query))
+        })
         .map(([name, _]) => name)
         .splice(0, 50);
 
