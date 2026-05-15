@@ -104,3 +104,33 @@ textarea {
 .selector a:hover {
     background-color: var(--button-hover-color);
 }
+
+button {
+    color: var(--text-title-color);
+
+    padding: 0.5rem;
+    background-color: var(--button-color);
+    border-radius: var(--small-button-radius);
+
+    outline: none;
+    border: transparent;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+button[disabled] {
+    background-color: var(--button-transparent-color);
+    cursor: not-allowed;
+}
+
+select {
+    background-color: var(--button-color);
+    color: var(--text-title-color);
+    border: transparent;
+    padding: 0.5rem;
+    border-radius: var(--small-button-radius);
+    cursor: pointer;
+}

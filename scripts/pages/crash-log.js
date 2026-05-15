@@ -21,7 +21,7 @@ const setup = (version) => {
         const logElement = document.getElementById("log");
         const toElement = document.getElementById("to");
 
-        logElement.disabled = false;
+        mapElement.disabled = false;
 
         mapElement.onclick = () => {
             const log = logElement.value;

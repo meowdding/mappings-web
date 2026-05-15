@@ -10,7 +10,10 @@ fetch("https://piston-meta.mojang.com/mc/game/version_manifest_v2.json")
     .then(it => it.json())
     .then(data => {
         const selectorElement = document.getElementById("version");
-        const versions = data.versions.filter(it => it.type === "release").map(it => it.id)
+        const versions = data.versions
+            .filter(it => it.type === "release")
+            .map(it => it.id)
+            .filter(it => it.startsWith("1."));
 
         setVersion(versions[0]);
 
